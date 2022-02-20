@@ -155,7 +155,7 @@ def cmd_group(ctx, config):
     ctx.obj['config'] = config
 
 
-@cmd_group.command('config')
+@cmd_group.command('config', help="add host and token for pinry")
 @click.option("--pinry_url", prompt="Your pinry-instance host like 'https://pin.xxx.com'", type=click.STRING)
 @click.option("--token", prompt="Your token in My -> Profile page", type=click.STRING)
 @click.pass_context
@@ -164,7 +164,7 @@ def create_config(ctx, token, pinry_url):
         json.dump({"token": token, "pinry_url": pinry_url}, fp)
 
 
-@cmd_group.command("add")
+@cmd_group.command("add", help="add file or url to pinry instance")
 @click.option("--board", "-b", "board", default=None, type=click.STRING, help="board name")
 @click.option("--tags", "-t", "tags", default="", type=click.STRING, help="tags seperated by comma ','")
 @click.option("--description", "-d", "description", default="", type=click.STRING, help="description text")

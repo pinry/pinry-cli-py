@@ -5,6 +5,10 @@ description = "Pinry CLI to upload local image to remote Pinry instance"
 authors = ["winkidney <winkidney@gmail.com>"]
 license = "MIT"
 
+[tool.poetry.scripts]
+pinry = "pinry_cli:cmd_group"
+
+
 [tool.poetry.dependencies]
 python = "^3.6"
 click = "^8.0.4"
